@@ -2,7 +2,6 @@
   // @ts-nocheck
   import backend from "./server.js";
   import HomePage from "./pages/HomePage.svelte";
-  import util from "./js/util";
   import Configuration from "./config";
   import { onMount } from "svelte";
 
