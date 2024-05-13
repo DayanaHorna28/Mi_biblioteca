@@ -1,0 +1,16 @@
+{
+    "name": "Demo Platform",
+    "short_name": "Demo Platform",
+    "icons": [{
+        "src": "/logo.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any"
+      }],
+    "start_url": "/index.html",
+    "scope":"/",
+    "display":"standalone",
+    "background_color": "#222",
+    "theme_color": "#222"
+}
+

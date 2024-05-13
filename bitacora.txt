@@ -1,0 +1,12 @@
+BACKOFFICE:
+https://admin.universalrace.net/control/default.php
+Henry
+Un1v3r541!
+xxx
+
+---Actualizar Libreria SASS--------
+npm i https://github.com/UNIVERSALSOFTPROJECTS/u-library-v2.git
+
+
+---Actualizar y cambiar version de Sass---
+npx sass --watch ./src/custom.scss ./src/app.css
