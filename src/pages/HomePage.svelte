@@ -1,16 +1,18 @@
 <script>
-  import { onMount } from "svelte";
+	import { onMount } from 'svelte';
+  
   import backend from "./../server"
 
-  let libros;
+  let libros = [];
   let consultaTitulo = '';
   let consultaAutor = '';
 
   let resultados = [];
 
   const listBooks = async() => {
-    libros = await backend.getListBooks();
-    console.log("ListBooks========>", libros);
+    let libros_ = await backend.getListBooks();
+    libros = libros_.data;
+    resultados = libros.list;
   }
 
   // Llamada a la función de filtrado cuando el componente se monta
@@ -27,28 +29,27 @@
     <input type="text" bind:value={consultaAutor} placeholder="Buscar por autor..." class="input-filter" />
   </div>
   <!-- Lista de resultados -->
-  {#if resultados.length > 0}
+  
     <table class="book-table">
       <thead>
         <tr>
           <th>Código</th>
           <th>Título</th>
           <th>Autor</th>
+          <th>Fecha</th>
         </tr>
       </thead>
       <tbody>
         {#each resultados as libro}
           <tr>
-            <td class="code">{Math.floor(Math.random() * 10000)}</td>
-            <td>{libro.titulo}</td>
+            <td class="code"></td>
+            <td>{libro.libro}</td>
             <td>{libro.autor}</td>
+            <td>{libro.fecha}</td>
           </tr>
-        {/each}
+        {/each}    
       </tbody>
     </table>
-  {:else}
-    <p class="no-results">No se encontraron resultados.</p>
-  {/if}
 </div>
 
 <style>

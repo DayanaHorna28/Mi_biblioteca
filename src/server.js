@@ -4,15 +4,16 @@ import axios from "axios"
 
 const conf=Configuration.getConfiguration()
 
-const headers = {"Content-Type":"application/json;charset=UTF-8", "clientAuth":conf.CLIENT_AUTH, "client":conf.CLIENT_CODE}
+const headers = {"Content-Type":"application/json;charset=UTF-8"}
 
 const ServerConnection = (() => {
 
 
 
-    const getListBooks = async (params) => {
-        console.log("API=========>", conf.API)
-        return axios.get(conf.API + `/api/libros/lista`);
+    const getListBooks = async () => {
+        let response = await axios.get("http://localhost:8080/api/libros/lista");
+        console.log("API=========>", response);
+        return response;
     };
 
     
